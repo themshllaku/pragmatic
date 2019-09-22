@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes Group
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => 'auth', 'as' => 'app.'], function() {
+
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
