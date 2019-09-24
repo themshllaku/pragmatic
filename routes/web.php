@@ -37,6 +37,25 @@ Route::group(['middleware' => 'auth', 'as' => 'app.'], function() {
 
 	/*
 	|--------------------------------------------------------------------------
+	| Users Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::group(['prefix' => 'users', 'as' => 'users.'], function() {
+		Route::get('/', 'Core\Users\UsersController@index')->name('index');
+		Route::get('/create', 'Core\Users\UsersController@create')->name('create');
+	});
+
+	/*
+	|--------------------------------------------------------------------------
+	| Roles Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::group(['prefix' => 'roles', 'as' => 'roles.'], function() {
+		Route::get('/', 'Core\Roles\RolesController@index')->name('index');
+	});
+
+	/*
+	|--------------------------------------------------------------------------
 	| Application Settings Routes
 	|--------------------------------------------------------------------------
 	*/
