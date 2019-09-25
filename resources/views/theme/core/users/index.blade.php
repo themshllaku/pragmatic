@@ -9,16 +9,18 @@ link-active
 	<div class="flex flex-col">
 		<div class="mb-3">
 			<h3 class="text-90 font-normal text-2xl">Users</h3>
+			<div class="flex items-center my-2">
+				<div class="w-1/2">
+					<input type="text" class="h-10 w-1/2 px-3 border bg-white focus:outline-none rounded" placeholder="Search...">
+				</div>
+				<div class="w-1/2 text-right">
+					<a href="#" class="font-bold py-2 px-6 bg-blue-600 text-white rounded shadow">New User</a>
+				</div>
+			</div>
 		</div>
 
 		<!-- begin::Content -->
 		<div class="card relative overflow-hidden border border-50">
-			<div class="flex items-center py-3 px-3">
-				<div class="w-1/2"></div>
-				<div class="w-1/2 text-right">
-					<a href="#" class="font-bold py-1 px-4 bg-blue-600 text-white rounded shadow">New User</a>
-				</div>
-			</div>
 			<div class="overflow-hidden overflow-x-auto relative">
 				<table class="table w-full">
 					<thead>
