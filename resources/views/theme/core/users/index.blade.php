@@ -14,7 +14,7 @@ link-active
 					<input type="text" class="h-10 w-1/2 px-3 border bg-white focus:outline-none rounded" placeholder="Search...">
 				</div>
 				<div class="w-1/2 text-right">
-					<a href="#" class="font-bold py-2 px-6 bg-blue-600 text-white rounded shadow">New User</a>
+					<a href="#" class="btn btn-link">New User</a>
 				</div>
 			</div>
 		</div>
