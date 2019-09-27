@@ -52,6 +52,14 @@ Route::group(['middleware' => 'auth', 'as' => 'app.'], function() {
 	*/
 	Route::group(['prefix' => 'roles', 'as' => 'roles.'], function() {
 		Route::get('/', 'Core\Roles\RolesController@index')->name('index');
+		Route::get('/create', 'Core\Roles\RolesController@create')->name('create');
+		Route::get('/permissions/model/{modelID}', 'Core\Roles\RolesController@availablePermissionsForModel');
+
+		Route::group(['prefix' => 'permissions', 'as' => 'permissions.'], function() {
+			Route::get('/create', 'Core\Roles\PermissionsController@create')->name('create');
+			Route::post('/store', 'Core\Roles\PermissionsController@store')->name('store');
+			Route::get('/available/{modelID}', 'Core\Roles\PermissionsController@availablePermissionsForModel');
+		});
 	});
 
 	/*

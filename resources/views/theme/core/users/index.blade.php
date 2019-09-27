@@ -9,12 +9,13 @@ link-active
 	<div class="flex flex-col">
 		<div class="mb-3">
 			<h3 class="text-90 font-normal text-2xl">Users</h3>
-			<div class="flex items-center my-2">
-				<div class="w-1/2">
-					<input type="text" class="h-10 w-1/2 px-3 border bg-white focus:outline-none rounded" placeholder="Search...">
+			<div class="flex justify-between items-center my-2">
+				<div class="relative">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-labelledby="search" role="presentation" class="fill-current absolute search-icon-center ml-3 text-70"><path fill-rule="nonzero" d="M14.32 12.906l5.387 5.387a1 1 0 0 1-1.414 1.414l-5.387-5.387a8 8 0 1 1 1.414-1.414zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
+					<input type="text" class="appearance-none form-control form-input w-search pl-search" placeholder="Search...">
 				</div>
-				<div class="w-1/2 text-right">
-					<a href="#" class="btn btn-link">New User</a>
+				<div class="text-right">
+					<a href="{{ route('app.users.create') }}" class="btn btn-default btn-primary">New User</a>
 				</div>
 			</div>
 		</div>
@@ -41,7 +42,7 @@ link-active
 							<td class="w-4"></td>
 							<td class="w-48">{{$user->name}}</td>
 							<td class="w-48">{{$user->email}}</td>
-							<td class="w-48">{{$user->status}}</td>
+							<td class="w-48">{{$user->active}}</td>
 							<td class="w-32">{{$user->created_at}}</td>
 							<td>
 								<span class="flex items-center justify-end">

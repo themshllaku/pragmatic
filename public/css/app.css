@@ -11606,6 +11606,32 @@ video {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
 }
 
+.form-select {
+  padding-right: 2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-size: 10px 6px;
+  background-position: center right .75rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="#35393C" fill-rule="nonzero" d="M8.293.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 1.707.293L5 3.586 8.293.293z"/></svg>");
+}
+
+.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.form-input:active:disabled,.form-input:focus:disabled,.form-select:active:disabled,.form-select:focus:disabled {
+  box-shadow: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+}
+
+.form-input:disabled,.form-select:disabled {
+  background-color: var(--30);
+  cursor: not-allowed;
+}
+
 .min-h-textarea { min-height: 8.375rem;
 }
 
@@ -11630,8 +11656,8 @@ video {
   -ms-user-select: none;
   user-select: none;
   flex-shrink: 0;
-  height: 1em;
-  width: 1em;
+  height: 1.2em;
+  width: 1.2em;
   color: #4299e1;
   background-color: #fff;
   border-color: #e2e8f0;
@@ -11685,9 +11711,18 @@ video {
   font-weight: 800;
 }
 
+.btn-sm {
+  height: 1.875rem;
+}
+
 .btn-primary
 {
   background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-danger {
+  background-color: var(--danger);
   color: var(--white);
 }
 
@@ -11709,6 +11744,32 @@ video {
   background-color: var(--transparent);
   box-shadow: none;
   text-shadow: none;
+}
+
+.btn-outline {
+  border-width: 1px;
+  border-width: 2px;
+  border-color: var(--primary-30);
+  border-radius: .5rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+}
+
+.btn-icon {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn-icon:hover {
+  opacity: .75;
 }
 
 .table
