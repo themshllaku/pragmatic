@@ -59,7 +59,7 @@ link-active
 		        			</div>
 		        		</template>
 		        		<template v-else>
-		        			<div><span class="text-base text-80 font-normal">n/a</span></div>
+		        			<div><span class="text-base text-80 font-normal">@{{message}}</span></div>
 		        		</template>
 		        	</div>
 				</div>
@@ -81,15 +81,20 @@ link-active
 	let app = new Vue({
 		el: "#create-permission",
 		data: {
-			available_permissions: []
+			available_permissions: [],
+			message: 'n/a',
 		},
 		methods: {
 			modelOnChange(event) {
 				let modelID = event.target.value
 				axios.get('/roles/permissions/available/' + modelID)
 				.then(res => {
-					console.log(res.data)
-					this.available_permissions = res.data
+					if(res.data.message)
+					{
+						this.message = res.data.message
+					} else {
+						this.available_permissions = res.data
+					}
 				})
 			}
 		}

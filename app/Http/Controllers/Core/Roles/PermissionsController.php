@@ -57,8 +57,11 @@ class PermissionsController extends Controller
     			array_push($available, ['permission' => $permission, 'name' => $name]);
     		}
     	}
-
-    	return response()->json($available, 200);
+        if(count($available) > 0)
+        {
+            return response()->json($available, 200);
+        }
+        return response()->json(['message' => 'All permissions are set for this model.'], 200);
     }
 
     public function getModel($id)

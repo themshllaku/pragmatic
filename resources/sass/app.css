@@ -38,6 +38,9 @@
 
 @tailwind utilities;
 
+.transform-r-2px { transition: all .2s ease!important; }
+.transform-r-2px:hover { transform: translateX(4px)!important; }
+
 .w-72 { width: 18rem; }
 .h-9 { height: 2.25rem; }
 

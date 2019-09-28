@@ -69,5 +69,11 @@ Route::group(['middleware' => 'auth', 'as' => 'app.'], function() {
 	*/
 	Route::group(['prefix' => 'settings', 'as' => 'settings.'], function() {
 		Route::get('/', 'Core\Settings\SettingsController@index')->name('index');
+
+		Route::group(['prefix' => 'models', 'as' => 'models.'], function() {
+			Route::get('/', 'Core\Settings\ModelsController@index')->name('index');
+			Route::get('/create', 'Core\Settings\ModelsController@create')->name('create');
+			Route::post('/store', 'Core\Settings\ModelsController@store')->name('store');
+		});
 	});
 });
